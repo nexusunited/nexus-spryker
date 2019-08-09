@@ -57,7 +57,7 @@ services:
     env_file:
       - ./env/app.env
     ports:
-      - "9090:8080"
+      - "8080:8080"
     volumes:
       - ../current:/data/shop/development/current:rw
 
