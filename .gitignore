@@ -1,0 +1,6 @@
+/.idea
+/vendor
+dump/
+
+# OS
+.DS_Store
