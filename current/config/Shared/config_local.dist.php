@@ -15,8 +15,9 @@ use Spryker\Shared\RabbitMq\RabbitMqEnv;
 use Spryker\Shared\Search\SearchConstants;
 use Spryker\Shared\Session\SessionConfig;
 use Spryker\Shared\Session\SessionConstants;
+use Spryker\Shared\SessionRedis\SessionRedisConstants;
 use Spryker\Shared\Setup\SetupConstants;
-use Spryker\Shared\Storage\StorageConstants;
+use Spryker\Shared\StorageRedis\StorageRedisConstants;
 use Spryker\Shared\Twig\TwigConstants;
 use Spryker\Shared\ZedNavigation\ZedNavigationConstants;
 use Spryker\Shared\ZedRequest\ZedRequestConstants;
@@ -93,23 +94,23 @@ $config[ApplicationConstants::ELASTICA_PARAMETER__EXTRA] = $ELASTICA_PARAMETER__
 $config[SearchConstants::ELASTICA_PARAMETER__EXTRA] = $ELASTICA_PARAMETER__EXTRA;
 
 /** Session and KV storage */
-$config[StorageConstants::STORAGE_REDIS_PROTOCOL] = getenv('REDIS_PROTOCOL');
-$config[StorageConstants::STORAGE_REDIS_HOST] = getenv('REDIS_HOST');
-$config[StorageConstants::STORAGE_REDIS_PORT] = getenv('REDIS_PORT');
-$config[StorageConstants::STORAGE_REDIS_PASSWORD] = getenv('REDIS_PASSWORD');
-$config[StorageConstants::STORAGE_REDIS_DATABASE] = 1;
+$config[StorageRedisConstants::STORAGE_REDIS_PROTOCOL] = getenv('REDIS_PROTOCOL');
+$config[StorageRedisConstants::STORAGE_REDIS_HOST] = getenv('REDIS_HOST');
+$config[StorageRedisConstants::STORAGE_REDIS_PORT] = getenv('REDIS_PORT');
+$config[StorageRedisConstants::STORAGE_REDIS_PASSWORD] = getenv('REDIS_PASSWORD');
+$config[StorageRedisConstants::STORAGE_REDIS_DATABASE] = 1;
 
-$config[SessionConstants::YVES_SESSION_REDIS_PROTOCOL] = getenv('REDIS_PROTOCOL');
-$config[SessionConstants::YVES_SESSION_REDIS_HOST] = getenv('REDIS_HOST');
-$config[SessionConstants::YVES_SESSION_REDIS_PORT] = getenv('REDIS_PORT');
-$config[SessionConstants::YVES_SESSION_REDIS_PASSWORD] = getenv('REDIS_PASSWORD');
-$config[SessionConstants::YVES_SESSION_REDIS_DATABASE] = 2;
+$config[SessionRedisConstants::YVES_SESSION_REDIS_PROTOCOL] = getenv('REDIS_PROTOCOL');
+$config[SessionRedisConstants::YVES_SESSION_REDIS_HOST] = getenv('REDIS_HOST');
+$config[SessionRedisConstants::YVES_SESSION_REDIS_PORT] = getenv('REDIS_PORT');
+$config[SessionRedisConstants::YVES_SESSION_REDIS_PASSWORD] = getenv('REDIS_PASSWORD');
+$config[SessionRedisConstants::YVES_SESSION_REDIS_DATABASE] = 2;
 
-$config[SessionConstants::ZED_SESSION_REDIS_PROTOCOL] = getenv('REDIS_PROTOCOL');
-$config[SessionConstants::ZED_SESSION_REDIS_HOST] = getenv('REDIS_HOST');
-$config[SessionConstants::ZED_SESSION_REDIS_PORT] = getenv('REDIS_PORT');
-$config[SessionConstants::ZED_SESSION_REDIS_PASSWORD] = getenv('REDIS_PASSWORD');
-$config[SessionConstants::ZED_SESSION_REDIS_DATABASE] = 3;
+$config[SessionRedisConstants::ZED_SESSION_REDIS_PROTOCOL] = getenv('REDIS_PROTOCOL');
+$config[SessionRedisConstants::ZED_SESSION_REDIS_HOST] = getenv('REDIS_HOST');
+$config[SessionRedisConstants::ZED_SESSION_REDIS_PORT] = getenv('REDIS_PORT');
+$config[SessionRedisConstants::ZED_SESSION_REDIS_PASSWORD] = getenv('REDIS_PASSWORD');
+$config[SessionRedisConstants::ZED_SESSION_REDIS_DATABASE] = 3;
 
 /** RabbitMQ **/
 $config[RabbitMqEnv::RABBITMQ_API_HOST] = getenv('RABBITMQ_HOST');
