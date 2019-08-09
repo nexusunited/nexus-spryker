@@ -11,7 +11,7 @@ services:
     ports:
       - "80:8080"
       - "10001:10001"
-      - "222:222"
+      - "2222:22"
     env_file:
       - ./env/app.env
     volumes:
