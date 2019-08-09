@@ -39,11 +39,9 @@ $stores['DE'] = [
     'currencyIsoCodes' => ['EUR', 'CHF'],
     'queuePools' => [
         'synchronizationPool' => [
-            'AT-connection',
             'DE-connection',
         ],
     ],
-    'storesWithSharedPersistence' => ['AT'],
 ];
 
 $stores['AT'] = [
@@ -51,11 +49,6 @@ $stores['AT'] = [
     ] + $stores['DE'];
 
 $stores['US'] = [
-        'queuePools' => [
-            'synchronizationPool' => [
-                'US-connection',
-            ],
-        ],
         'storesWithSharedPersistence' => [],
     ] + $stores['DE'];
 

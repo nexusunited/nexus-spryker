@@ -7,6 +7,7 @@ use Spryker\Shared\Collector\CollectorConstants;
 use Spryker\Shared\Customer\CustomerConstants;
 use Spryker\Shared\GlueApplication\GlueApplicationConstants;
 use Spryker\Shared\Kernel\KernelConstants;
+use Spryker\Shared\Kernel\Store;
 use Spryker\Shared\Log\LogConstants;
 use Spryker\Shared\Newsletter\NewsletterConstants;
 use Spryker\Shared\ProductManagement\ProductManagementConstants;
@@ -20,11 +21,12 @@ use Spryker\Shared\Search\SearchConstants;
 use Spryker\Shared\Session\SessionConfig;
 use Spryker\Shared\Session\SessionConstants;
 use Spryker\Shared\SessionRedis\SessionRedisConstants;
-use Spryker\Shared\Setup\SetupConstants;
 use Spryker\Shared\StorageRedis\StorageRedisConstants;
 use Spryker\Shared\Twig\TwigConstants;
 use Spryker\Shared\ZedNavigation\ZedNavigationConstants;
 use Spryker\Shared\ZedRequest\ZedRequestConstants;
+
+$CURRENT_STORE = Store::getInstance()->getStoreName();
 
 // ---------- Yves host
 $config[ApplicationConstants::HOST_YVES] = getenv('YVES_HOST');
@@ -91,7 +93,7 @@ $config[SearchConstants::ELASTICA_PARAMETER__PORT] = getenv('ELASTICSEARCH_PORT'
 $config[ApplicationConstants::ELASTICA_PARAMETER__INDEX_NAME]
     = $config[CollectorConstants::ELASTICA_PARAMETER__INDEX_NAME]
     = $config[SearchConstants::ELASTICA_PARAMETER__INDEX_NAME]
-    = 'esa_search';
+    = getenv('ELASTICSEARCH_INDEX');
 
 $ELASTICA_PARAMETER__EXTRA = [];
 $config[ApplicationConstants::ELASTICA_PARAMETER__EXTRA] = $ELASTICA_PARAMETER__EXTRA;
