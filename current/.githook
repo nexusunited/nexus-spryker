@@ -1,0 +1,15 @@
+config:
+  phpstan:
+    level: 4
+    config: phpstan.neon
+    additionalDirectories:
+      - tests/
+  architecture:
+    priority: 2
+
+preCommitFileCommands:
+  - GitHook\Command\FileCommand\PreCommit\CodeStyleCheckCommand
+  - GitHook\Command\FileCommand\PreCommit\PhpStanCheckCommand
+  - GitHook\Command\FileCommand\PreCommit\ArchitectureCheckCommand
+  - GitHook\Command\FileCommand\PreCommit\DependencyViolationCheckCommand
+  - GitHook\Command\FileCommand\PreCommit\StreamSpecific\Glue\CodeStyleCheckCommand

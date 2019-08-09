@@ -1,0 +1,21 @@
+includes:
+    - vendor/spryker-sdk/phpstan-spryker/extension.neon
+
+parameters:
+    excludes_analyse:
+        - %rootDir%/../../../src/Generated/*
+        - %rootDir%/../../../src/Orm/*
+
+    bootstrap: %rootDir%/../../../phpstan-bootstrap.php
+
+    ignoreErrors:
+        - '#Call to an undefined method .+Criteria::.+\(\).#'
+        - '#Call to an undefined method .+DataSetStepBrokerAwareInterface::setDataSetWriter\(\).#'
+        - '#Call to an undefined method .+DataSetStepBrokerAwareInterface::addAfterImportHook\(\).#'
+
+    reportUnmatchedIgnoredErrors: false
+
+    dynamicConstantNames:
+        - APPLICATION
+        - APPLICATION_ENV
+        - APPLICATION_STORE
