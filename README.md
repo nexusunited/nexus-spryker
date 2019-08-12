@@ -4,11 +4,10 @@
  ```
 $ cd docker
 
-$ export COMPOSE_PROJECT_NAME=nxsacademy
-$ docker volume create --name=$COMPOSE_PROJECT_NAME-ardb-data
-$ docker volume create --name=$COMPOSE_PROJECT_NAME-elastic-data
-$ docker volume create --name=$COMPOSE_PROJECT_NAME-db-data
-$ docker volume create --name=$COMPOSE_PROJECT_NAME-rabbitmq-data
+$ docker volume create --name=nxsacademy-ardb-data
+$ docker volume create --name=nxsacademy-elastic-data
+$ docker volume create --name=nxsacademy-db-data
+$ docker volume create --name=nxsacademy-rabbitmq-data
 
 $ docker-compose up -d
  ```
