@@ -25,4 +25,7 @@ $ cd /data/shop/development/current
 
 $ composer install
 $ vendor/bin/install
+
+chmod -R 777 /data/shop/development/current/data
+chown -R 1000:1000 /data/shop/development/current
 ```
