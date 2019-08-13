@@ -4,12 +4,9 @@
  ```
 $ cd docker
 
-$ docker volume create --name=nxsacademy-ardb-data
-$ docker volume create --name=nxsacademy-elastic-data
-$ docker volume create --name=nxsacademy-db-data
-$ docker volume create --name=nxsacademy-rabbitmq-data
-
+$ ./create-volumes.sh
 $ docker-compose up -d
+$ ./setup.sh <RabbitMq-Container-Name>
  ```
 
 ###### Spryker setup
