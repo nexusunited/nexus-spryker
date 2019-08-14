@@ -49,4 +49,4 @@ Password: nexus123
 Host: 127.0.0.1  
 Port: 5432  
 User: root  
-Password: nexus123
+Password: mate20mg
