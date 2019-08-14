@@ -48,5 +48,5 @@ Password: nexus123
 ###### Database
 Host: 127.0.0.1  
 Port: 5432  
-User: root  
+User: spryker  
 Password: mate20mg
