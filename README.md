@@ -8,14 +8,8 @@ $ ./setup.sh
  ```
 
 ###### Spryker setup
-Connect to **app** container: "nxsacademy\_app\_ID"
-
 ```
 $ docker exec -it nxsacademy_app_1 bash
-```
-
-###### Install spryker
-```
 $ cd /data/shop/development/current
 
 $ composer install
