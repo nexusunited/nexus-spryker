@@ -1,0 +1,75 @@
+version: "2.0"
+services:
+  app:
+    image: nexusnetsoft/spryker-docker-app:latest
+    depends_on:
+      - db
+      - elasticsearch
+      - ardb
+      - rabbitmq
+      - jenkins
+    ports:
+      - "80:8080"
+      - "10001:10001"
+      - "2222:22"
+    env_file:
+      - ./env/app.env
+    volumes:
+      - ../current:/data/shop/development/current:rw
+
+  db:
+    image: postgres:9.6
+    env_file:
+      - ./env/db.env
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  elasticsearch:
+    image: nexusnetsoft/spryker-docker-elastic:latest
+    env_file:
+      - ./env/elastic.env
+    ports:
+      - 9200:9200
+    volumes:
+      - elastic-data:/usr/share/elasticsearch/data
+
+  ardb:
+    image: nexusnetsoft/spryker-docker-ardb:latest
+    ports:
+      - "6379:16379"
+    volumes:
+      - ardb-data:/var/lib/ardb/data
+
+  rabbitmq:
+    image: rabbitmq:3.7-management
+    env_file:
+      - ./env/rabbitmq.env
+    ports:
+      - "15672:15672"
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+
+  jenkins:
+    image: nexusnetsoft/jenkins-php:7.2
+    env_file:
+      - ./env/app.env
+    ports:
+      - "8080:8080"
+    volumes:
+      - ../current:/data/shop/development/current:rw
+
+volumes:
+  ardb-data:
+    external:
+      name: ${COMPOSE_PROJECT_NAME}-ardb-data
+  elastic-data:
+    external:
+      name: ${COMPOSE_PROJECT_NAME}-elastic-data
+  db-data:
+    external:
+      name: ${COMPOSE_PROJECT_NAME}-db-data
+  rabbitmq-data:
+    external:
+      name: ${COMPOSE_PROJECT_NAME}-rabbitmq-data
