@@ -3,7 +3,6 @@
  ###### Docker setup
  ```
 $ cd docker
-
 $ ./setup.sh
  ```
 
@@ -12,7 +11,6 @@ $ ./setup.sh
 $ docker exec -it nxsacademy_app_1 bash
 $ cd /data/shop/development/current
 
-$ composer install
 $ vendor/bin/install
 
 chmod -R 777 /data/shop/development/current/data
