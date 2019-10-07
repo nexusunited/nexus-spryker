@@ -31,6 +31,9 @@ http://de.zed.nxsacademy.local
 - Email: admin@spryker.com
 - Password: change123
 
+###### Glue
+http://de.glue.nxsacademy.local
+
 ###### Jenkins
 http://localhost:8080  
 

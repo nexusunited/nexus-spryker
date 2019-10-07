@@ -50,8 +50,8 @@ $config[SessionConstants::ZED_SESSION_COOKIE_NAME] = $config[ApplicationConstant
 $config[EventConstants::LOG_FILE_PATH] = APPLICATION_ROOT_DIR . '/data/US/logs/application_events.log';
 
 // ----------- Glue Application
-$config[GlueApplicationConstants::GLUE_APPLICATION_DOMAIN] = sprintf('http://glue.us.%s.local', $domain);
-$config[GlueApplicationConstants::GLUE_APPLICATION_CORS_ALLOW_ORIGIN] = sprintf('http://glue.us.%s.local', $domain);
+//$config[GlueApplicationConstants::GLUE_APPLICATION_DOMAIN] = sprintf('http://glue.us.%s.local', $domain);
+//$config[GlueApplicationConstants::GLUE_APPLICATION_CORS_ALLOW_ORIGIN] = sprintf('http://glue.us.%s.local', $domain);
 
 // ---------- RabbitMQ
 $config[RabbitMqEnv::RABBITMQ_API_VIRTUAL_HOST] = '/US_development_zed';
