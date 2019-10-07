@@ -43,10 +43,10 @@ use SprykerShop\Shared\ShopApplication\ShopApplicationConstants;
 $CURRENT_STORE = Store::getInstance()->getStoreName();
 
 // ---------- Yves host
-$config[ApplicationConstants::HOST_YVES] = getenv('YVES_HOST');
+$config[ApplicationConstants::HOST_YVES] = sprintf('%s.www.%s.local', strtolower(getenv('APPLICATION_STORE')), getenv('VM_PROJECT'));
 
 // ---------- Zed host
-$config[ApplicationConstants::HOST_ZED] = getenv('ZED_HOST');
+$config[ApplicationConstants::HOST_ZED] = sprintf('%s.zed.%s.local', strtolower(getenv('APPLICATION_STORE')), getenv('VM_PROJECT'));
 $config[ApplicationConstants::PORT_ZED] = ':8080';
 $config[ApplicationConstants::PORT_SSL_ZED] = '';
 $config[ApplicationConstants::BASE_URL_ZED] = sprintf(

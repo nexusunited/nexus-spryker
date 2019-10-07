@@ -15,7 +15,7 @@ services:
     env_file:
       - ./env/app.env
     volumes:
-      - ../current:/data/shop/development/current:rw
+      - project-data:/data/shop/development/current:rw
 
   db:
     image: postgres:9.6
@@ -53,15 +53,17 @@ services:
 
   jenkins:
     image: nexusnetsoft/jenkins-php:7.2
-    restart: always
     env_file:
       - ./env/app.env
     ports:
       - "8080:8080"
     volumes:
-      - ../current:/data/shop/development/current:rw
+      - project-data:/data/shop/development/current:rw
 
 volumes:
+  project-data:
+    external:
+      name: ${COMPOSE_PROJECT_NAME}-ardb-data
   ardb-data:
     external:
       name: ${COMPOSE_PROJECT_NAME}-ardb-data

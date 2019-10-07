@@ -1,22 +1,32 @@
 #!/usr/bin/env bash
 
-docker exec -i $1 rabbitmqctl add_vhost /DE_development_zed
-docker exec -i $1 rabbitmqctl add_user DE_development mate20mg
-docker exec -i $1 rabbitmqctl set_user_tags DE_development administrator
-docker exec -i $1 rabbitmqctl set_permissions -p /DE_development_zed DE_development ".*" ".*" ".*"
+volumes=( nxsacademy-ardb-data nxsacademy-project-data nxsacademy-elastic-data nxsacademy-db-data nxsacademy-rabbitmq-data )
+stores=( DE AT US )
 
-docker exec -i $1 rabbitmqctl add_vhost /US_development_zed
-docker exec -i $1 rabbitmqctl add_user US_development mate20mg
-docker exec -i $1 rabbitmqctl set_user_tags US_development administrator
-docker exec -i $1 rabbitmqctl set_permissions -p /US_development_zed US_development ".*" ".*" ".*"
+for volumename in "${volumes[@]}"
+do
+    docker volume create --name=${volumename}
+done
 
-docker exec -i $1 rabbitmqctl add_vhost /AT_development_zed
-docker exec -i $1 rabbitmqctl add_user AT_development mate20mg
-docker exec -i $1 rabbitmqctl set_user_tags AT_development administrator
-docker exec -i $1 rabbitmqctl set_permissions -p /AT_development_zed AT_development ".*" ".*" ".*"
+docker-compose up -d
 
-docker exec -i $1 rabbitmqctl add_user admin mate20mg
-docker exec -i $1 rabbitmqctl set_user_tags admin administrator
-docker exec -i $1 rabbitmqctl set_permissions -p /DE_development_zed admin ".*" ".*" ".*"
-docker exec -i $1 rabbitmqctl set_permissions -p /US_development_zed admin ".*" ".*" ".*"
-docker exec -i $1 rabbitmqctl set_permissions -p /AT_development_zed admin ".*" ".*" ".*"
+rmqcontainer=$(docker ps --filter name=rabbitmq* -q)
+appcontainer=$(docker ps --filter name=app* -q)
+
+docker cp ../current/. ${appcontainer}:/data/shop/development/current
+
+sleep 12s
+
+docker exec -i ${rmqcontainer} rabbitmqctl add_user admin mate20mg
+docker exec -i ${rmqcontainer} rabbitmqctl set_user_tags admin administrator
+
+for store in "${stores[@]}"
+do
+    docker exec -i ${rmqcontainer} rabbitmqctl add_vhost /${store}_development_zed
+    docker exec -i ${rmqcontainer} rabbitmqctl add_user ${store}_development mate20mg
+    docker exec -i ${rmqcontainer} rabbitmqctl set_user_tags ${store}_development administrator
+    docker exec -i ${rmqcontainer} rabbitmqctl set_permissions -p /${store}_development_zed ${store}_development ".*" ".*" ".*"
+    docker exec -i ${rmqcontainer} rabbitmqctl set_permissions -p /${store}_development_zed admin ".*" ".*" ".*"
+done
+
+docker exec -i ${appcontainer} composer install -n
