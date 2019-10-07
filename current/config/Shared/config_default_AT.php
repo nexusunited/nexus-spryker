@@ -13,7 +13,7 @@ use Spryker\Shared\ZedRequest\ZedRequestConstants;
 $domain = getenv('VM_PROJECT') ?: 'suite';
 
 // ---------- Yves host
-$config[ApplicationConstants::HOST_YVES] = sprintf('www.at.%s.local', $domain);
+//$config[ApplicationConstants::HOST_YVES] = sprintf('www.at.%s.local', $domain);
 $config[ApplicationConstants::PORT_YVES] = '';
 $config[ApplicationConstants::PORT_SSL_YVES] = '';
 $config[ApplicationConstants::BASE_URL_YVES] = sprintf(
@@ -50,8 +50,8 @@ $config[SessionConstants::ZED_SESSION_COOKIE_NAME] = $config[ApplicationConstant
 $config[EventConstants::LOG_FILE_PATH] = APPLICATION_ROOT_DIR . '/data/AT/logs/application_events.log';
 
 // ----------- Glue Application
-$config[GlueApplicationConstants::GLUE_APPLICATION_DOMAIN] = sprintf('http://glue.at.%s.local', $domain);
-$config[GlueApplicationConstants::GLUE_APPLICATION_CORS_ALLOW_ORIGIN] = sprintf('http://glue.at.%s.local', $domain);
+//$config[GlueApplicationConstants::GLUE_APPLICATION_DOMAIN] = sprintf('http://glue.at.%s.local', $domain);
+//$config[GlueApplicationConstants::GLUE_APPLICATION_CORS_ALLOW_ORIGIN] = sprintf('http://glue.at.%s.local', $domain);
 
 // ---------- RabbitMQ
 $config[RabbitMqEnv::RABBITMQ_API_VIRTUAL_HOST] = '/AT_development_zed';

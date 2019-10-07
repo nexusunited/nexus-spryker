@@ -43,10 +43,10 @@ use SprykerShop\Shared\ShopApplication\ShopApplicationConstants;
 $CURRENT_STORE = Store::getInstance()->getStoreName();
 
 // ---------- Yves host
-$config[ApplicationConstants::HOST_YVES] = getenv('YVES_HOST');
+$config[ApplicationConstants::HOST_YVES] = sprintf('%s.www.%s.local', strtolower(getenv('APPLICATION_STORE')), getenv('VM_PROJECT'));
 
 // ---------- Zed host
-$config[ApplicationConstants::HOST_ZED] = getenv('ZED_HOST');
+$config[ApplicationConstants::HOST_ZED] = sprintf('%s.zed.%s.local', strtolower(getenv('APPLICATION_STORE')), getenv('VM_PROJECT'));
 $config[ApplicationConstants::PORT_ZED] = ':8080';
 $config[ApplicationConstants::PORT_SSL_ZED] = '';
 $config[ApplicationConstants::BASE_URL_ZED] = sprintf(
@@ -179,8 +179,9 @@ $config[LogConstants::EXCEPTION_LOG_FILE_PATH_YVES] = $baseLogFilePath . '/YVES/
 $config[LogConstants::EXCEPTION_LOG_FILE_PATH_ZED] = $baseLogFilePath . '/ZED/exception.log';
 
 // ----------- Glue Application
-$config[GlueApplicationConstants::GLUE_APPLICATION_DOMAIN] = sprintf('%s', getenv('GLUE_HOST'));
+$config[GlueApplicationConstants::GLUE_APPLICATION_DOMAIN] = sprintf('%s.glue.%s.local', strtolower(getenv('APPLICATION_STORE')), getenv('VM_PROJECT'));;
 $config[GlueApplicationConstants::GLUE_APPLICATION_REST_DEBUG] = true;
+$config[GlueApplicationConstants::GLUE_APPLICATION_CORS_ALLOW_ORIGIN] = sprintf('http://glue.us.%s.local', $domain);
 
 // ----------- OAUTH
 $config[OauthConstants::PRIVATE_KEY_PATH] = 'file://' . APPLICATION_ROOT_DIR . '/config/Zed/dev_only_private.key';
