@@ -27,15 +27,21 @@ chown -R 1000:1000 /data/shop/development/current
 
 #### Access
 
-Yves: http://de.www.nxsacademy.local
+###### Yves
+http://de.www.nxsacademy.local
 - Email: spencor.hopkin@spryker.com
 - Password: change123
-Zed: http://de.zed.nxsacademy.local
+
+###### Zed
+http://de.zed.nxsacademy.local
 - Email: admin@spryker.com
 - Password: change123
 
-Jenkins: http://localhost:8080  
-ŔabbitMQ: http://localhost:15672
+###### Jenkins
+http://localhost:8080  
+
+###### ŔabbitMQ
+http://localhost:15672
 - Username: spryker
 - Password: mate20mg
 
