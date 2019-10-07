@@ -27,7 +27,7 @@ chown -R 1000:1000 /data/shop/development/current
 
 #### Access
 
-Yves: http://de.www.suite.local/
+Yves: http://de.www.nxsacademy.local
 - Email: spencor.hopkin@spryker.com
 - Password: change123
 Zed: http://de.zed.nxsacademy.local
