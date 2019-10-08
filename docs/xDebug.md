@@ -35,5 +35,7 @@ echo "max_execution_time=300" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug
 
 For CLI xdebug add this to ~/.bashrc and restart shell
 -----------------------
+```
 export PHP_IDE_CONFIG="serverName=zed"
 export XDEBUG_CONFIG="profiler_enable=1 remote_port=9000 remote_autostart=1"
+```
