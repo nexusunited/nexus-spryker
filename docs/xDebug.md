@@ -35,6 +35,7 @@ echo "max_execution_time=300" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug
 
 Server configuration in PHPStorm:
 -----------------------
+Language & Frameworks > PHP > Servers
 ```
 Host: de.zed.nxsacademy.local (at./us. for other stores)
 Port: 80
