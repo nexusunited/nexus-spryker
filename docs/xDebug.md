@@ -1,4 +1,4 @@
-Setup xdebug
+Setup xDebug:
 -----------------------
 ```bash
 docker-php-ext-enable xdebug
@@ -19,8 +19,8 @@ memory_limit=2G
 max_execution_time=300
 ```
 
-Save in console
-
+Execute in console:
+-----------------------
 ```
 echo "xdebug.idekey=\"PHPSTORM\"" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini 
 echo "xdebug.remote_enable=1" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini 
@@ -31,6 +31,15 @@ echo "#xdebug.remote_host=192.168.103.159" >> /usr/local/etc/php/conf.d/docker-p
 echo "xdebug.max_nesting_level=1000" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini 
 echo "memory_limit=2G" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini 
 echo "max_execution_time=300" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini 
+```
+
+Server configuration in PHPStorm:
+-----------------------
+```
+Host: de.zed.nxsacademy.local (at./us. for other stores)
+Port: 80
+Path mapping: /data/shop/development
+IDE Key: PHPSTORM
 ```
 
 For CLI xdebug add this to ~/.bashrc and restart shell
