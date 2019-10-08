@@ -43,11 +43,35 @@ http://localhost:15672
 #### Credentials
 
 ###### SFTP
-Username: nexus  
-Password: nexus123
+
+| Info | Value |
+| ---- | ----- |
+| Host | 127.0.0.1 |
+| Port | 2222 |
+| Directory | /data/shop/development |
+| Mapping | / |
+| Username | nexus |
+| Password | nexus123 |
+
 
 ###### Database
 Host: 127.0.0.1  
 Port: 5432  
 User: spryker  
-Password: mate20mg
+Password: mate20mg  
+
+Database Name:  
+- Store DE: `DE_development_zed`
+- Store US: `US_development_zed`
+- Store AT: `AT_development_zed`
+
+
+#### Domains
+
+To reache the domains from local, you have to add this entries to your hosts-config:
+
+```
+127.0.0.1    de.www.nxsacademy.local
+127.0.0.1    de.zed.nxsacademy.local
+127.0.0.1    de.glue.nxsacademy.local
+```
