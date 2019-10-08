@@ -49,6 +49,11 @@ $stores['AT'] = [
     ] + $stores['DE'];
 
 $stores['US'] = [
+        'queuePools' => [
+            'synchronizationPool' => [
+                'US-connection',
+            ],
+        ],
         'storesWithSharedPersistence' => [],
     ] + $stores['DE'];
 

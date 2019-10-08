@@ -63,7 +63,7 @@ Password: mate20mg
 Database Name:  
 - Store DE: `DE_development_zed`
 - Store US: `US_development_zed`
-- Store AT: `AT_development_zed`
+- Store AT: `DE_development_zed`
 
 
 #### Domains
@@ -71,7 +71,7 @@ Database Name:
 To reache the domains from local, you have to add this entries to your hosts-config:
 
 ```
-127.0.0.1    de.www.nxsacademy.local
-127.0.0.1    de.zed.nxsacademy.local
-127.0.0.1    de.glue.nxsacademy.local
+127.0.0.1    de.www.nxsacademy.local at.www.nxsacademy.local us.www.nxsacademy.local
+127.0.0.1    de.zed.nxsacademy.local at.zed.nxsacademy.local us.zed.nxsacademy.local
+127.0.0.1    de.glue.nxsacademy.local at.glue.nxsacademy.local us.glue.nxsacademy.local
 ```
