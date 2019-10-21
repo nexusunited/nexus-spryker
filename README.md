@@ -8,7 +8,7 @@ $ ./setup.sh
 
 ###### Spryker setup
 ```
-$ docker exec -it nxsacademy_app_1 bash
+$ docker exec -it nxsacademy_app bash
 $ cd /data/shop/development/current
 
 $ vendor/bin/install
@@ -62,13 +62,13 @@ Password: mate20mg
 
 Database Name:  
 - Store DE: `DE_development_zed`
-- Store US: `US_development_zed`
 - Store AT: `DE_development_zed`
+- Store US: `US_development_zed`
 
 
 #### Domains
 
-To reache the domains from local, you have to add this entries to your hosts-config:
+To reach the domains from local, you have to add this entries to your hosts-config:
 
 ```
 127.0.0.1    de.www.nxsacademy.local at.www.nxsacademy.local us.www.nxsacademy.local
