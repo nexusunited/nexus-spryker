@@ -17,6 +17,13 @@ chmod -R 777 /data/shop/development/current/data
 chown -R 1000:1000 /data/shop/development/current
 ```
 
+###### Access to docker (right user)
+
+```
+$ docker exec -it -u nexus nxsacademy_app bash
+```
+
+
 #### Access
 
 ###### Yves
