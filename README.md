@@ -8,7 +8,7 @@ $ ./setup.sh
 
 ###### Spryker setup
 ```
-$ docker exec -it nxsacademy_app bash
+$ docker exec -it training_app bash
 $ cd /data/shop/development/current
 
 $ vendor/bin/install
@@ -20,7 +20,7 @@ chown -R 1000:1000 /data/shop/development/current
 ###### Access to docker (right user)
 
 ```
-$ docker exec -it -u nexus nxsacademy_app bash
+$ docker exec -it -u nexus training_app bash
 ```
 
 

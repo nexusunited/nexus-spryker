@@ -1,0 +1,44 @@
+[
+    {
+        "customer_number": "27",
+        "item_number": "30",
+        "prices": [
+            {
+                "quantity": 1,
+                "value": 14.58
+            },
+            {
+                "quantity": 2,
+                "value": 13.89
+            },
+            {
+                "quantity": 4,
+                "value": 11.11
+            }
+        ]
+    },
+    {
+        "customer_number": "27",
+        "item_number": "31",
+        "prices": [
+            {
+                "quantity": 1,
+                "value": 99.99
+            }
+        ]
+    },
+    {
+        "customer_number": "28",
+        "item_number": "30",
+        "prices": [
+            {
+                "quantity": 1,
+                "value": 59.99
+            },
+            {
+                "quantity": 50,
+                "value": 49.99
+            }
+        ]
+    }
+]

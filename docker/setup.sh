@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-volumes=( nxsacademy-ardb-data nxsacademy-project-data nxsacademy-elastic-data nxsacademy-db-data nxsacademy-rabbitmq-data )
+volumes=( training-ardb-data training-project-data training-elastic-data training-db-data training-rabbitmq-data )
 stores=( DE AT US )
 
 for volumename in "${volumes[@]}"

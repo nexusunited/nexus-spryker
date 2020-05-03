@@ -1,7 +1,7 @@
 version: "2.0"
 services:
   app:
-    container_name: nxsacademy_app
+    container_name: training_app
     image: nexusnetsoft/spryker-docker-app:latest
     depends_on:
       - db
@@ -19,7 +19,7 @@ services:
       - project-data:/data/shop/development/current:rw
 
   db:
-    container_name: nxsacademy_db
+    container_name: training_db
     image: postgres:9.6
     env_file:
       - ./env/db.env
@@ -29,7 +29,7 @@ services:
       - db-data:/var/lib/postgresql/data
 
   elasticsearch:
-    container_name: nxsacademy_elasticsearch
+    container_name: training_elasticsearch
     image: nexusnetsoft/spryker-docker-elastic:latest
     env_file:
       - ./env/elastic.env
@@ -39,7 +39,7 @@ services:
       - elastic-data:/usr/share/elasticsearch/data
 
   ardb:
-    container_name: nxsacademy_ardb
+    container_name: training_ardb
     image: nexusnetsoft/spryker-docker-ardb:latest
     ports:
       - "6379:16379"
@@ -47,7 +47,7 @@ services:
       - ardb-data:/var/lib/ardb/data
 
   rabbitmq:
-    container_name: nxsacademy_rabbitmq
+    container_name: training_rabbitmq
     image: rabbitmq:3.7-management
     env_file:
       - ./env/rabbitmq.env
@@ -57,7 +57,7 @@ services:
       - rabbitmq-data:/var/lib/rabbitmq
 
   jenkins:
-    container_name: nxsacademy_jenkins
+    container_name: training_jenkins
     image: nexusnetsoft/jenkins-php:7.2
     env_file:
       - ./env/app.env
